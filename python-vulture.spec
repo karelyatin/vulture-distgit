@@ -57,6 +57,8 @@ Requires:	python3-setuptools
 
 %prep
 %autosetup -n	%{module_name}-%{version}
+# Remove shebang
+sed -i '1{/^#!/d}' vulture.py
 
 %build
 %py2_build
